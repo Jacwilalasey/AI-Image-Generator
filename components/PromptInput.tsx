@@ -1,9 +1,13 @@
 'use client'
 
+import fetchSuggestion from "@/lib/fetchFromGPT";
 import { useState } from "react";
+import useSWR from "swr";
 
 function PromptInput() {
     const [input, setInput] =useState("");
+
+    const {data, error, isLoading} = useSWR('/api/suggestions', fetchSuggestion)
   
     return (
     <div className="m-10">
