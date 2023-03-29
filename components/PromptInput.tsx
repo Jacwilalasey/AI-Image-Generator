@@ -7,7 +7,12 @@ import useSWR from "swr";
 function PromptInput() {
     const [input, setInput] =useState("");
 
-    const {data, error, isLoading} = useSWR('/api/suggestions', fetchSuggestion)
+    const {data: suggestion, isLoading} = useSWR(
+        '/api/suggestions', fetchSuggestion, 
+        {
+            revalidateOnFocus: false,
+         }
+        );
   
     return (
     <div className="m-10">
