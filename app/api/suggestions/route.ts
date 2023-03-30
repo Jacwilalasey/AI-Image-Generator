@@ -1,5 +1,4 @@
 export async function GET(request: Request) {
-    //connect to azure
     const response = await fetch("http://localhost:7071/api/getChatGPTSuggestion", {
         cache: 'no-store'
     });
