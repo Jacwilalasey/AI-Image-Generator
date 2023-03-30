@@ -1,5 +1,5 @@
 const fetchSuggestion = () =>
-  fetch("/api/suggestions", {
+  fetch("/api/suggestion", {
     cache: "no-store",
   }).then((res) => res.json());
 
