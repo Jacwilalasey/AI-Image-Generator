@@ -4,6 +4,7 @@ import { FormEvent, useState } from "react";
 import useSWR from "swr";
 import toast from "react-hot-toast";
 import fetchSuggestion from "../lib/fetchFromGPT";
+import fetchImages from "../lib/fetchImages";
 
 
 function PromptInput() {
@@ -15,6 +16,10 @@ function PromptInput() {
         mutate,
         isValidating,
       } = useSWR("/api/suggestion", fetchSuggestion, {
+        revalidateOnFocus: false,
+    });
+
+    const {mutate: updateImages} = useSWR("images", fetchImages, {
         revalidateOnFocus: false,
     });
 

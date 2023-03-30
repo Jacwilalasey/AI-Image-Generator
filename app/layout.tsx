@@ -1,7 +1,7 @@
 import '../styles/globals.css'
-import PromptInput from '@/components/PromptInput'
-
-import Header from '@/components/Header'
+import PromptInput from '../components/PromptInput'
+import Header from '../components/Header'
+import ClientProvider from '../components/ClientProvider'
 
 export const metadata = {
   title: 'Create Next App',
